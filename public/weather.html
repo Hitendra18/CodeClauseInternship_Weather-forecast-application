@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="weather.css" />
+    <title>Weather</title>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <div class="navbar">
+      <div class="navbar_container">
+        <div id="today-date" class="today_date">02, August 9:00 AM</div>
+        <div class="search_bar">
+          <input
+            type="text"
+            name=""
+            id="city-search"
+            placeholder="Enter a city name" />
+          <button id="search-btn">
+            <img src="./assets/search-icon.png" alt="search icon" />
+          </button>
+          <p id="error-message" class="hide">*Please enter a valid city.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main section divided into two parts left and right -->
+    <div class="container">
+      <!-- Current Weather ==> Left Part -->
+      <div class="current_weather">
+        <!-- city and country -->
+        <div class="place">
+          <img src="./assets/location-icon.png" alt="" />
+          <div class="city">
+            <div id="city-name">City</div>
+            <div id="country">XY</div>
+          </div>
+        </div>
+
+        <!-- relevent image of current weather -->
+        <img
+          id="relevent-image"
+          src="https://openweathermap.org/img/wn/10d@2x.png"
+          alt=""
+          style="margin-top: -60px; margin-bottom: -50px"
+          class="main-image" />
+
+        <!-- current temperature -->
+        <div class="current_temp">
+          <p id="current-temp">00</p>
+          <div class="change_unit">
+            <button id="deg-c">°C</button>
+          </div>
+        </div>
+
+        <!-- Weather description -->
+        <p id="weather-status">Clear Sky</p>
+
+        <!-- feels like temp -->
+        <p id="feels-like">Feels like:</p>
+
+        <!-- Other information related to weather -->
+        <div class="other_info">
+          <!-- Current temperature -->
+          <div class="temp_info current_weather_tiles">
+            <div class="text">
+              <img src="./assets/temperature-icon.png" alt="" />
+              <p>Temperature:</p>
+            </div>
+            <div class="value">
+              <p id="temperature-value">45</p>
+            </div>
+          </div>
+
+          <!-- Humidity -->
+          <div class="humidity_info current_weather_tiles">
+            <div class="text">
+              <img src="./assets/humidity-icon.png" alt="" />
+              <p>Humidity:</p>
+            </div>
+            <div class="value">
+              <p id="humidity-value">45</p>
+            </div>
+          </div>
+
+          <!-- Wind -->
+          <div class="wind_info current_weather_tiles">
+            <div class="text">
+              <img src="./assets/wind-icon.png" alt="" />
+              <p>Wind:</p>
+            </div>
+            <div class="value">
+              <p id="wind-value">45</p>
+            </div>
+          </div>
+
+          <!-- Visibility -->
+          <div class="visibility_info current_weather_tiles">
+            <div class="text">
+              <img src="./assets/visibility-icon.png" alt="" />
+              <p>Visibility:</p>
+            </div>
+            <div class="value">
+              <p id="visibility-value">45</p>
+            </div>
+          </div>
+
+          <!-- Sunrise -->
+          <div class="sunrise_info current_weather_tiles">
+            <div class="text">
+              <img src="./assets/sunrise-icon.png" alt="" />
+              <p>Sunrise:</p>
+            </div>
+            <div class="value">
+              <p id="sunrise-value">45</p>
+            </div>
+          </div>
+
+          <!-- Sunset -->
+          <div class="sunset_info current_weather_tiles">
+            <div class="text">
+              <img src="./assets/sunset-icon.png" alt="" />
+              <p>Sunset:</p>
+            </div>
+            <div class="value">
+              <p id="sunset-value">45</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Weather forecast ==> Right part -->
+      <div class="forecast_weather" id="right-side">
+        <!-- <div class="forecast_weather_tiles">
+          <div class="forecast_content">
+            <div class="forecast_content_hero">
+              <img
+                src="https://openweathermap.org/img/wn/10d@2x.png"
+                alt=""
+                style="margin: -15px" />
+              <div class="forecast_date">
+                <div id="day">Mon</div>
+                <div id="time">9:00 AM</div>
+              </div>
+            </div>
+            <div class="forecast_content_temp">
+              <div>Temperature</div>
+              <div id="forecast-temp">12/15</div>
+            </div>
+            <div class="forecast_content_humidity">
+              <div>Humidity</div>
+              <div id="forecast-humidity">12/15</div>
+            </div>
+            <div class="forecast_content_wind">
+              <div>Wind</div>
+              <div id="forecast-wind">12/15</div>
+            </div>
+            <div class="forecast_content_feels">
+              <div>Feels Like</div>
+              <div id="forecast-feels">12/15</div>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+
+    <script>
+      const apiKey = "<%= apiKey%>";
+    </script>
+    <script type="module" src="weather.js"></script>
+  </body>
+</html>
